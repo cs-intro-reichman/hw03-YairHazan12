@@ -11,7 +11,24 @@ public class UniqueChars {
      * unless they are space characters.
      */
     public static String uniqueChars(String s) {
-        // Replace the following statement with your code
-        return null;
+        String answer = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (!isInString(answer, s.charAt(i))) {
+                answer += s.charAt(i);
+            }
+        }
+        return answer;
+    }
+
+    public static boolean isInString(String s, char c) {
+        if (c == ' ') {
+            return false;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == c) {
+                return true;
+            }
+        }
+        return false;
     }
 }
